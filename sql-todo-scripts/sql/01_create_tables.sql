@@ -8,6 +8,7 @@
 -- 2. teachers
 -- 3. courses
 -- 4. enrollments
+
 --
 -- TODO:
 -- Create table: students
@@ -18,7 +19,14 @@
 -- email
 -- age
 -- created_at
-
+create table students(
+    id integer,
+    first_name varchar(50),
+    last_name varchar(50),
+    email varchar(255),
+    age integer,
+    created_at date
+);
 
 -- TODO:
 -- Create table: teachers
@@ -28,7 +36,13 @@
 -- last_name
 -- email
 -- hire_date
-
+create table teachers(
+    id integer,
+    first_name varchar(50),
+    last_name varchar(50),
+    email varchar(255),
+    hire_date date
+);
 
 -- TODO:
 -- Create table: courses
@@ -39,7 +53,14 @@
 -- price
 -- teacher_id
 -- created_at
-
+create table courses(
+    id integer,
+    name varchar(50),
+    description varchar,
+    price integer,
+    teacher_id integer,
+    created_at date
+);
 
 -- TODO:
 -- Create table: enrollments
@@ -50,3 +71,10 @@
 -- enrollment_date
 -- status
 
+create table enrollments(
+    id integer,
+    student_id integer,
+    course_id integer,
+    enrollment_date date,
+    status varchar
+);

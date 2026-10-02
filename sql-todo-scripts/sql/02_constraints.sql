@@ -70,15 +70,24 @@ alter table students
 -- courses.name should be unique.
 
 alter table students
-add constraint stud
+    add constraint students_unique unique (email);
+
+alter table teachers
+    add constraint teachers_unique unique (email);
+
+alter table courses
+    add constraint courses_unique unique (name);
 
 -- TODO:
 -- Add CHECK constraints.
 -- Example ideas:
 -- students.age must be greater than 0.
 -- courses.price must be greater than or equal to 0.
+alter table students
+    add constraint students_check unique (age>0);
 
-
+alter table courses
+    add constraint courses_check unique (price>0);
 -- TODO:
 -- Add DEFAULT values.
 -- Example ideas:
@@ -87,3 +96,14 @@ add constraint stud
 -- enrollments.enrollment_date should default to current date.
 -- enrollments.status should default to 'ACTIVE'.
 
+alter table students
+alter column created_at set default current_timestamp;
+
+alter table courses
+alter column created_at set default current_timestamp;
+
+alter table enrollments
+alter column enrollment_date set default  current_date;
+
+alter table enrollments
+    alter column status set default 'ACTIVE';
